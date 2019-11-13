@@ -1,0 +1,9 @@
+<div *ngIf="book">
+  <h3>{{ book.title }}</h3>
+  <a routerLink="..">Back</a>
+</div>
+<hr />
+<div *ngIf="book$ | async as bo">
+  <h3>{{ bo.title }}</h3>
+  <a routerLink="..">Back</a>
+</div>

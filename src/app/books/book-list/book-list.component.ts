@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { BookService } from '../book.service';
+import { IBook } from '../ibook';
+import { Subscription, Subject, Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'sy-book-list',
@@ -6,21 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
-  books = [
-    {
-      title: 'Design Patterns',
-      subtitle: 'Elements of Reusable Object-Oriented Software'
-    },
-    {
-      title: 'REST und HTTP',
-      subtitle: 'Entwicklung und Integration nach dem Architekturstil des Web'
-    },
-    {
-      title: 'Eloquent JavaScript',
-      subtitle: 'A Modern Introduction to Programming'
-    }
-  ];
-  constructor() {}
+  $books: Observable<IBook[]>;
+  foo = 'hans';
 
-  ngOnInit() {}
+  @Input() books: IBook[];
+  constructor(private service: BookService) {}
+
+  format(value: string): string {
+    console.log('method', value);
+    return value.toUpperCase();
+  }
+
+  ngOnInit() {
+    this.$books = this.service.getBooks();
+  }
 }

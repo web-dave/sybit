@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
+  production: false,
   url: 'https://bookmonkey.azurewebsites.net/books'
 };
