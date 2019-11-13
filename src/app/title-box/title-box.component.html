@@ -1,0 +1,6 @@
+<!-- <div [innerHTML]="txt"></div>
+<hr /> -->
+<div
+  [innerHTML]="'<' + this.tag + '>' + this.myTitle + '</' + this.tag + '>'"
+></div>
+<button (click)="moin($event)">Moin</button>
