@@ -1,0 +1,21 @@
+<form
+  *ngIf="book$ | async as book"
+  #form="ngForm"
+  (ngSubmit)="save(form.value)"
+>
+  <label for="title">Title:</label>
+  <input type="text" [(ngModel)]="book.title" name="title" #title="ngModel" />
+  <div ngModelGroup="publisher" name="publisher" #publisher="ngModelGroup">
+    <input type="text" [(ngModel)]="book.publisher.name" name="name" hidden />
+    <input type="text" [(ngModel)]="book.publisher.url" name="url" hidden />
+  </div>
+  <input type="text" [(ngModel)]="book.abstract" name="abstract" hidden />
+  <input type="text" [(ngModel)]="book.cover" name="cover" hidden />
+  <input type="text" [(ngModel)]="book.isbn" name="isbn" hidden />
+  <input type="text" [(ngModel)]="book.subtitle" name="subtitle" hidden />
+  <input type="text" [(ngModel)]="book.author" name="author" hidden />
+  <input type="text" [(ngModel)]="book.numPages" name="numPages" hidden />
+  <button type="submit">Save</button>
+
+  <pre>{{ book | json }}</pre>
+</form>
