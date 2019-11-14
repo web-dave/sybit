@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <moin-moin name="DAVE"></moin-moin>
+    <script>
+      const moin = document.querySelector('moin-moin');
+      setTimeout(() => (moin.name = 'Hans'), 1500);
+      moin.addEventListener('highfive', e => console.log(e));
+    </script>
+    <script src="moin-es2015.js"></script>
+  </body>
+</html>
