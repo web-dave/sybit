@@ -148,10 +148,12 @@
               "projects/element/src/favicon.ico",
               "projects/element/src/assets"
             ],
-            "styles": [
-              "projects/element/src/styles.scss"
-            ],
-            "scripts": []
+            "styles": ["projects/element/src/styles.scss"],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -213,9 +215,7 @@
               "projects/element/src/favicon.ico",
               "projects/element/src/assets"
             ],
-            "styles": [
-              "projects/element/src/styles.scss"
-            ],
+            "styles": ["projects/element/src/styles.scss"],
             "scripts": []
           }
         },
@@ -227,9 +227,7 @@
               "projects/element/tsconfig.spec.json",
               "projects/element/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
