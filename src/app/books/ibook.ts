@@ -5,6 +5,7 @@ export interface IBook {
   abstract: string;
   numPages: number;
   author: string;
+  cover: string;
   publisher: {
     name: string;
     url: string;
